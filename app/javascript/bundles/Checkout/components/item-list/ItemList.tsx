@@ -11,8 +11,8 @@ interface IProps {
 
 const ItemList: FunctionComponent<IProps> = ({ items }: IProps) => (
     <div className={style.itemList}>
-        {items.map(item => (
-            <Item key={item.id} {...item} />
+        {items.map((item, ind) => (
+            <Item key={`${item.id}-${ind}`} {...item} />
         ))}
     </div>
 );

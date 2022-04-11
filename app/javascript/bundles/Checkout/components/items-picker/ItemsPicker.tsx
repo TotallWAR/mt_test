@@ -14,7 +14,7 @@ interface IProps {}
 
 const ItemsPicker: FunctionComponent<IProps> = ({}: IProps) => {
     const [itemCode, setItemCode] = useState("");
-    const { items, loading, err } = useItems({ code: itemCode });
+    const { items, loading, err, clear } = useItems({ code: itemCode });
 
     const handleItemInput = (e: ChangeEvent<HTMLInputElement>) => {
         setItemCode(e.target.value);
@@ -27,10 +27,12 @@ const ItemsPicker: FunctionComponent<IProps> = ({}: IProps) => {
                     id="scanner-input"
                     handleInput={handleItemInput}
                     autoFocus
-                    placeholder={"1"}
+                    placeholder={"A"}
                     label={"Scan product code"}
                 />
             </div>
+
+            <button onClick={clear}>Clear basket</button>
 
             {loading ? <Loading /> : null}
             {err ? <p className={generalStyle.err}>{err}</p> : null}

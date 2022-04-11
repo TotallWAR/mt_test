@@ -25,6 +25,9 @@ export const useBasketInfo = () => {
                     setErr(res.statusText);
                 }
                 updateLoading(false);
+            } else {
+                setTotalPrice(0);
+                setTotalDiscountPrice(0);
             }
         })();
     }, [items]);
@@ -42,6 +45,6 @@ export const useBasketInfo = () => {
 const getQueryItemsParams = (items = []) =>
     items.reduce(
         (params, item, ind, arr) =>
-            `${params}items[]=${item.id}${arr.length - 1 !== ind ? "&" : ""}`,
+            `${params}items[]=${item.code}${arr.length - 1 !== ind ? "&" : ""}`,
         ""
     );
