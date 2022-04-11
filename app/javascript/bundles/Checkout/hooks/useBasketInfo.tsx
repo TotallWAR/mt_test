@@ -42,6 +42,6 @@ export const useBasketInfo = () => {
 const getQueryItemsParams = (items = []) =>
     items.reduce(
         (params, item, ind, arr) =>
-            `items[]=${item.id}${arr.length - 1 !== ind ? "&" : ""}`,
+            `${params}items[]=${item.id}${arr.length - 1 !== ind ? "&" : ""}`,
         ""
     );
