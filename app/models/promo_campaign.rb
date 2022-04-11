@@ -1,0 +1,2 @@
+class PromoCampaign < ApplicationRecord
+end
