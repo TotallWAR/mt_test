@@ -2,7 +2,7 @@ class BasketService
   def self.calc_basket_summary(items, basket_campaigns)
     total_price = self.get_basket_total_price(items)
     items_discounts = self.get_items_discount(items)
-    basket_discounts = self.get_basket_discounts(items, basket_campaigns)
+    basket_discounts = self.get_basket_discounts(items, basket_campaigns, total_price - items_discounts)
     return {
       total_price_without_discount: total_price,
       total_price_with_discount: total_price - items_discounts - basket_discounts
@@ -18,7 +18,7 @@ class BasketService
       grouped_items = items.group_by { |item| item.code }
       mapped_groups = grouped_items.keys.map do |k|
         unless grouped_items[k][0].promo_campaigns.nil?
-          return grouped_items[k][0].promo_campaigns.map { |campaign| PromoCampaignService.get_discount_by_campaign_type(campaign.campaign_type, grouped_items[k]) }.sum
+           grouped_items[k][0].promo_campaigns.map { |campaign| PromoCampaignService.get_discount_by_campaign_type(campaign.campaign_type, grouped_items[k]) }.sum
         end
       end
       return mapped_groups.sum
@@ -27,9 +27,10 @@ class BasketService
   end
 
   # discounts can be applied for ALL basket promo campaigns (so they are summed)
-  def self.get_basket_discounts(items, basket_campaigns)
+  def self.get_basket_discounts(items, basket_campaigns, total_price)
     if basket_campaigns.respond_to? :map
-      return basket_campaigns.map { |campaign| PromoCampaignService.calc_basket_discount(items, campaign) }.sum
+      result = basket_campaigns.map { |campaign| PromoCampaignService.calc_basket_discount(campaign, total_price, items) }.sum
+      return result
     end
     return 0
   end
