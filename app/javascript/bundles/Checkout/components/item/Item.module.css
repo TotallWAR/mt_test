@@ -1,0 +1,9 @@
+.item img {
+    margin-bottom: 10px;
+}
+
+.item figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

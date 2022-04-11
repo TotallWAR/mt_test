@@ -3,8 +3,7 @@ import { ChangeEvent, FunctionComponent, useState } from "react";
 // @ts-ignore
 import style from "./ItemsPicker.module.css";
 // @ts-ignore
-
-import generalStyle from "../../../common/styles/general.css";
+import generalStyle from "../../../common/styles/general.module.css";
 
 import ItemList from "../item-list/ItemList";
 import Input from "../../../common/components/basic/input/Input";
@@ -35,6 +34,7 @@ const ItemsPicker: FunctionComponent<IProps> = ({}: IProps) => {
 
             {loading ? <Loading /> : null}
             {err ? <p className={generalStyle.err}>{err}</p> : null}
+            <ItemList items={items} />
         </div>
     );
 };
