@@ -1,13 +1,27 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  code: MyString
-  name: MyString
-  image: MyString
-  price:
+  code: "A"
+  name: "Good A"
+  price: 3000.00
+  image: "https://placeholder.pics/svg/150/DEDEDE/555555/Item%20A"
+  promo_campaigns: two
 
 two:
-  code: MyString
-  name: MyString
-  image: MyString
-  price:
+  code: "B"
+  name: "Good B"
+  price: 2000.00
+  image: "https://placeholder.pics/svg/150/DEDEDE/555555/Item%20B"
+  promo_campaigns: one
+
+three:
+  code: "C"
+  name: "Good C"
+  price: 5000.00
+  image: "https://placeholder.pics/svg/150/DEDEDE/555555/Item%20C"
+
+four:
+  code: "D"
+  name: "Good D"
+  price: 1500.00
+  image: "https://placeholder.pics/svg/150/DEDEDE/555555/Item%20D"
