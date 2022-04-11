@@ -6,9 +6,7 @@ import style from "./Header.module.css";
 interface IProps {}
 
 const Header: FunctionComponent<IProps> = ({}: IProps) => {
-    return <div className={style.header}>
-        Moneytree test task
-    </div>;
+    return <div className={style.header}>Moneytree test task</div>;
 };
 
 export default Header;

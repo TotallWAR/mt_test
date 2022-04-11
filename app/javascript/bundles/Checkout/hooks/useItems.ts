@@ -1,9 +1,9 @@
-import {useCallback, useContext, useEffect} from "react";
-import {debounce} from "../../common/utils/debounce";
-import {ItemsContext} from "../context/items.context";
+import { useCallback, useContext, useEffect } from "react";
+import { debounce } from "../../common/utils/debounce";
+import { ItemsContext } from "../context/items.context";
 
-export const useItems = ({code}) => {
-    const {items, updateItems, err, setErr, loading, updateLoading} =
+export const useItems = ({ code }) => {
+    const { items, updateItems, err, setErr, loading, updateLoading } =
         useContext(ItemsContext);
 
     const clear = useCallback(() => updateItems([]), []);
@@ -34,5 +34,5 @@ export const useItems = ({code}) => {
     // @ts-ignore
     useEffect(() => loadItem(code), [code]);
 
-    return {items, err, loading, clear};
+    return { items, err, loading, clear };
 };
