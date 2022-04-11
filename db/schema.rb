@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_11_154453) do
+ActiveRecord::Schema.define(version: 2022_04_11_181025) do
 
   create_table "items", force: :cascade do |t|
     t.string "code"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2022_04_11_154453) do
     t.datetime "date_to"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "campaign_type"
   end
 
 end
