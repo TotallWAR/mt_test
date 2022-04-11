@@ -16,8 +16,8 @@ const BasketInfo: FunctionComponent<IProps> = ({}: IProps) => {
         <div className={style.basketInfo}>
             {loading ? <Loading /> : null}
             {err ? <p className={generalStyle.err}>{err}</p> : null}
-            <p>Total price: {basketInfo?.totalPrice}</p>
-            <p>Total price with discount: {basketInfo?.totalPriceDiscount}</p>
+            <p>Total price: <b>{basketInfo?.totalPrice}</b></p>
+            <p>Total price with discount: <b>{basketInfo?.totalPriceDiscount}</b></p>
         </div>
     );
 };
