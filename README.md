@@ -61,12 +61,15 @@ Total basket discount can be configured with different params too.
 Each `campaign_type` has its own implementation so can be easily extended.
 
 Creating of such campaigns can be divided into separate service like CRM for managers who can create new campaigns remotely.
-`date_from` and `date_to` cols can be used for controlling campaign "lifecycle".
+`date_from` and `date_to` cols can be used for controlling campaign "lifecycle". Besides creating items can be seperated into service too.
+It can be added more validation and error handling both on the frontend and the backend.
 
 Frontend part is organized under `javascript` directory.
 The `Checkout system` is seperated in module and split into chunk. So new modules can be added without affecting on this one.
 
 Logic for extracting data and keeping it up to date is seperated into custom react hooks and context.
+
+We can use an i18n lib for translations in future.
 
 ##Copyright
 Made by Aleksandr Grigorenko
