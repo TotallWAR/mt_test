@@ -14,6 +14,7 @@ Run commands to set up:
 ```rails db:seed```
 
 To dev: ```foreman start -f Procfile.dev```
+and open `http://localhost:3000` in browser
 
 
 ## Tests
@@ -69,7 +70,7 @@ The `Checkout system` is seperated in module and split into chunk. So new module
 
 Logic for extracting data and keeping it up to date is seperated into custom react hooks and context.
 
-We can use an i18n lib for translations in future.
+We can use an i18n lib for translations in future, create adaptive design etc.
 
 ## Copyright
 Made by Aleksandr Grigorenko
