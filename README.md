@@ -71,7 +71,7 @@ Logic for extracting data and keeping it up to date is seperated into custom rea
 
 We can use an i18n lib for translations in future.
 
-##Copyright
+## Copyright
 Made by Aleksandr Grigorenko
 
 Bootstrapped with [React on Rails](https://github.com/shakacode/react_on_rails)
