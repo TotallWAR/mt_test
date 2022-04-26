@@ -1,5 +1,44 @@
 # Moneytree test task
 
+The task is to implement a checkout system (a cash register) that meets the following requirements:
+- It can scan items.
+- It can compute the total price.
+- It can apply promotion campaigns, which are configurable.
+
+#### Items
+| Item | Price      |
+|------|------------|
+| A    | JPY 3000   |
+| B    | JPY 2000   |
+| C    | JPY 5000   |
+| D    | JPY 1500   |
+
+#### Promotion Campaigns
+- If 3 of item A are purchased, the price for all 3 is JPY 7500.
+- If 2 of item B are purchased, the price for both is JPY 3500.
+- If the total basket price (after previous discounts) is over JPY 15000, the basket
+receives a discount of JPY 2000.
+
+
+####Example Test Data
+
+| Basket               | Price         |
+|----------------------|---------------|
+| A, B, C              | JPY 10000     |
+| B, A, B, A, A        | JPY 11000     |
+| C, B, A, A, D, A, B  | JPY 15500     |
+| C, A, D, A, A        | JPY 14000     |
+
+
+####Design Considerations
+We expect the marketing team will want to invent new types of promotional rules beyond the current multi-buy and basket total promotions. The design should allow the system to extended.
+
+
+## Additional info
+Git history is included so you can see the thought process.
+
+Frontend is located in `app/javascript/bundles` and powered by `React 17`
+
 ## Deps
 - ruby 2.7.5
 - node 16+
@@ -20,7 +59,7 @@ and open `http://localhost:3000` in browser
 ## Tests
 To run tests type command `rails test`
 
-Tests are build with Example Test Data from tech assignment file.
+Tests are build with Example Test Data from tech assignment above.
 
 ## Architecture
 I've developed the system with opportunity for extending for other promo campaigns.
